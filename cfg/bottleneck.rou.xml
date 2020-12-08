@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+  <route id="route1_0" edges="1 2 3 4 5"/>
+  <route id="route2_0" edges="2 3 4 5"/>
+  <route id="route3_0" edges="3 4 5"/>
+  <route id="route4_0" edges="4 5"/>
+  <route id="route5_0" edges="5"/>
+  <flow id="flow_00" route="route1_0" type="human" departLane="random" departSpeed="10" begin="1" end="86400" vehsPerHour="2300.0"/>
+</routes>

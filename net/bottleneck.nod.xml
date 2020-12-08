@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+  <node id="1" x="0" y="0"/>
+  <node id="2" x="100" y="0"/>
+  <node id="3" x="410" y="0"/>
+  <node id="4" x="550" y="0" type="zipper" radius="20"/>
+  <node id="5" x="830" y="0" type="zipper" radius="20"/>
+  <node id="6" x="985" y="0"/>
+  <node id="fake1" x="0" y="1"/>
+  <node id="fake2" x="0" y="2"/>
+</nodes>

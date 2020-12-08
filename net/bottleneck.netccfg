@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+  <input>
+    <node-files value="bay_bridge_toll_20201201-1713501606814030.4978924.nod.xml"/>
+    <edge-files value="bay_bridge_toll_20201201-1713501606814030.4978924.edg.xml"/>
+    <connection-files value="bay_bridge_toll_20201201-1713501606814030.4978924.con.xml"/>
+  </input>
+  <output>
+    <output-file value="bay_bridge_toll_20201201-1713501606814030.4978924.net.xml"/>
+  </output>
+  <processing>
+    <no-internal-links value="false"/>
+    <no-turnarounds value="true"/>
+  </processing>
+</configuration>
