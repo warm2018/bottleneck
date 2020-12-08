@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 02/23/20 23:12:13 by Eclipse SUMO netconvert Version 1.0.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="freeway.nod.xml"/>
+        <edge-files value="freeway.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="freeway.net.xml"/>
+    </output>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+    </junctions>
+
+    <report>
+        <verbose value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<net version="1.0" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="300.00,0.00" convBoundary="0.00,0.00,2600.00,0.00" origBoundary="-300.00,0.00,2300.00,0.00" projParameter="!"/>
+
+    <edge id=":a1_0" function="internal">
+        <lane id=":a1_0_0" index="0" speed="33.00" length="0.10" shape="300.00,-1.60 300.00,-1.60"/>
+    </edge>
+    <edge id=":a2_0" function="internal">
+        <lane id=":a2_0_0" index="0" speed="33.00" length="0.10" shape="2300.00,-1.60 2300.00,-1.60"/>
+    </edge>
+
+    <edge id="a1i_1" from="a1" to="a2" priority="78">
+        <lane id="a1i_1_0" index="0" speed="33.00" length="2000.00" shape="300.00,-1.60 2300.00,-1.60"/>
+    </edge>
+    <edge id="bi" from="b" to="a1" priority="78">
+        <lane id="bi_0" index="0" speed="33.00" length="300.00" shape="0.00,-1.60 300.00,-1.60"/>
+    </edge>
+    <edge id="ci" from="a2" to="c" priority="78">
+        <lane id="ci_0" index="0" speed="33.00" length="300.00" shape="2300.00,-1.60 2600.00,-1.60"/>
+    </edge>
+
+    <junction id="a1" type="priority" x="300.00" y="0.00" incLanes="bi_0" intLanes=":a1_0_0" shape="300.00,0.00 300.00,-3.20 300.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="a2" type="priority" x="2300.00" y="0.00" incLanes="a1i_1_0" intLanes=":a2_0_0" shape="2300.00,0.00 2300.00,-3.20 2300.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="b" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,0.00 0.00,-3.20"/>
+    <junction id="c" type="dead_end" x="2600.00" y="0.00" incLanes="ci_0" intLanes="" shape="2600.00,-3.20 2600.00,0.00"/>
+
+    <connection from="a1i_1" to="ci" fromLane="0" toLane="0" via=":a2_0_0" dir="s" state="M"/>
+    <connection from="bi" to="a1i_1" fromLane="0" toLane="0" via=":a1_0_0" dir="s" state="M"/>
+
+    <connection from=":a1_0" to="a1i_1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":a2_0" to="ci" fromLane="0" toLane="0" dir="s" state="M"/>
+
+</net>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 12/08/20 20:25:09 by Eclipse SUMO GUI Version 1.3.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="cfg/freeway.net.xml"/>
+        <route-files value="cfg/freeway.rou.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="result/tripinfo.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="81600"/>
+        <step-length value="0.01"/>
+    </time>
+
+    <processing>
+        <collision.action value="none"/>
+        <collision.stoptime value="0"/>
+    </processing>
+
+    <emissions>
+        <device.emissions.probability value="1"/>
+    </emissions>
+
+    <traci_server>
+        <remote-port value="64443"/>
+    </traci_server>
+
+    <gui_only>
+        <tracker-interval value="0.01"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
+</tripinfos>
