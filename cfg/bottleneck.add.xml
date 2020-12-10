@@ -1,7 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
-  <vType id="HV" accel="2.6" decel="4.5" color="1,0,0" sigma="0.5" tau="1.0" minGap="2.5" maxSpeed="30" speedFactor="1.0" speedDev="0.1" impatience="0.5" carFollowModel="IDM" laneChangeModel="LC2013" lcStrategic="1.0" lcCooperative="1.0" lcSpeedGain="1.0" lcKeepRight="1.0"/>
 
-  <vType id="CAV" accel="2.6" decel="4.5" color="0,1,0" sigma="0.5" tau="1.0" minGap="2.5" maxSpeed="30" speedFactor="1.0" speedDev="0.1" impatience="0.5" carFollowModel="ACC" laneChangeModel="LC2013" lcStrategic="1.0" lcCooperative="1.0" lcSpeedGain="1.0" lcKeepRight="1.0"/>
+	<vType id="CAV" accel="2.5" tau = '0.6' decel="10" sigma="0.5" length="4.5"
+   minGap="2.5" maxSpeed="15" lcKeepRight="0" color="0,1,0" probability="1"
+   carFollowModel="CC" tauEngine="0.5" omegaN="0.2" xi="1" c1="0.5"
+   lanesCount="4" ccAccel="5" ccDecel="5" ploegKp="0.2" ploegKd="0.7" ploegH="0.5" />
+	
+	<vType id="HV" accel="2.5" tau = '1' decel="10" lcKeepRight="0" sigma="0.5" length="4.5"
+		   minGap="2.5" maxSpeed="15" color="1,0,0"  carFollowModel="IDM" />
 
 </additional>

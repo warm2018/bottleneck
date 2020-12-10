@@ -5,7 +5,7 @@
   <node id="3" x="410" y="0"/>
   <node id="4" x="550" y="0" type="zipper" radius="20"/>
   <node id="5" x="830" y="0" type="zipper" radius="20"/>
-  <node id="6" x="985" y="0"/>
+  <node id="6" x="1500" y="0"/>
   <node id="fake1" x="0" y="1"/>
   <node id="fake2" x="0" y="2"/>
 </nodes>

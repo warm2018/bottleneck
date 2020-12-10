@@ -11,7 +11,6 @@ import xlsxwriter
 from write_excel import write_excel
 
 from copy import deepcopy
-
 from plexe import Plexe, DRIVER, ACC, CACC, FAKED_CACC, RPM, GEAR, ACCELERATION, SPEED  
 #generator(1)
 #we need to import python modules from the $SUMO_HOME/tools directory
@@ -76,18 +75,18 @@ def run():
     STEP = 0
     plexe = Plexe()
     traci.addStepListener(plexe)
-    StepLength = 0.01
+    StepLength = 0.1
     topology = {}
-    while STEP < 400: 
+    while STEP < 3600: 
         traci.simulationStep()  
         STEP += StepLength
-        if int(STEP*100) % 500 == 0:
-            Vehicles_0 = traci.lane.getLastStepVehicleIDs("a1i_1_0")
-            #Vehicles_1 = traci.lane.getLastStepVehicleIDs("a1i_1_1")
+        print(STEP)
+        if (int(STEP*10) % 50 == 0) and STEP >= 300:
+            Vehicles_0 = traci.lane.getLastStepVehicleIDs("4_0")
+            Vehicles_1 = traci.lane.getLastStepVehicleIDs("4_1")
             #Vehicles_2 = traci.lane.getLastStepVehicleIDs("a1i_1_2")
             #Vehicles_3 = traci.lane.getLastStepVehicleIDs("a1i_1_3")
-            #for lane in [Vehicles_0,Vehicles_1,Vehicles_2,Vehicles_3]:
-            for lane in [Vehicles_0]:   
+            for lane in [Vehicles_0,Vehicles_1]: #Vehicles_2,Vehicles_3]:
                 position_result,lane_result = sort_lane(lane)
                 platooning_members = find_sequence(lane_result)
                 print("&&&&&&&",platooning_members)
@@ -95,14 +94,13 @@ def run():
                 print("topology",topology)
                 print("&&&&&&&",platooning_members)
 
-        if int(STEP*100) % 500 == 0:
-            platoon_die(plexe, topology)
+        if int(STEP*10) % 50 == 0:
+            try:
+                platoon_die(plexe, topology)
+            except:
+                pass
+
             #print("######")
-        if STEP >= 20 and WRITE_EXCEL and int(STEP*100) % 10 == 0:
-            currentIDList = traci.vehicle.getIDList()
-            print('999')
-            write_excel(STEP, worksheet, begin_step,RouteList,vehicle_store,currentIDList)
-    workbook.close()
     traci.close()
     sys.stdout.flush()
 
@@ -241,10 +239,8 @@ if __name__ == "__main__":
     # subprocess and then the python script connects and runs
     #"--collision.action", "none",
     #"--collision.mingap-factor", "0",
-    traci.start([sumoBinary, "-c", "cfg/freeway.sumocfg",
-                             "--tripinfo-output", "result/tripinfo.xml",
-                             "--step-length","0.01",
-                             "--device.emissions.probability", "1.0",])
+    traci.start([sumoBinary, "-c", "../cfg/bottleneck.sumocfg",
+                             "--step-length","0.1",])
 
 
     run()

@@ -7,8 +7,8 @@
   <route id="route4_0" edges="4 5"/>
   <route id="route5_0" edges="5"/>
 
-  <flow id="flow_0" route="route1_0" type="HV" departLane="random" departSpeed="10" begin="1" end="86400" vehsPerHour="1500.0"/>
+  <flow id="HV" route="route1_0" type="HV" departLane="random" departSpeed="10" begin="1" end="86400" vehsPerHour="1300.0"/>
 
-  <flow id="flow_1" route="route1_0" type="CAV" departLane="random" departSpeed="10" begin="1" end="86400" vehsPerHour="1500.0"/>
+  <flow id="CAV" route="route1_0" type="HV" departLane="random" departSpeed="10" begin="1" end="86400" vehsPerHour="1300.0"/>
 
 </routes>
